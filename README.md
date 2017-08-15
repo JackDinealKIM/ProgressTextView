@@ -110,6 +110,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-[1]: https://github.com/JackDinealKIM/ProgressTextView/blob/master/app/src/main/java/net/jaedong/selectable_sample/MainActivity.java
+[1]: https://github.com/JackDinealKIM/ProgressTextView/blob/master/app/src/main/java/net/jaedong/progresstextview_sample/MainActivity.java
 
 
