@@ -1,6 +1,7 @@
-Android-Selectable-TextView
+Android-Progress-TextView
 =====
-Helper library for Android developers looking to progress textview.
+Helper library for Android developers.
+This is "ProgressTextView".
 
 Sample Capture
 =====
