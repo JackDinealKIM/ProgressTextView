@@ -1,6 +1,7 @@
 Android-Progress-TextView
 =====
 Helper library for Android developers.
+
 This is "ProgressTextView".
 
 Sample Capture
@@ -56,7 +57,20 @@ Simple use cases will look something like this:
 * JAVA
 
 ```java
-		progressTextView = (ProgressTextView) findViewById(R.id.text);
+public class MainActivity extends AppCompatActivity {
+
+    private TextView startButton;
+    private ProgressTextView progressTextView;
+    private EditText secEditText;
+    private ProgressTextView.SpannableTask target = null;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+        progressTextView = (ProgressTextView) findViewById(R.id.text);
         progressTextView.addProgressListener(new ProgressListener() {
             @Override
             public void complete() {
@@ -79,6 +93,26 @@ Simple use cases will look something like this:
                 }
             }
         });
+    }
+
+    private void cancelProgress() {
+        // cancel all
+        target.cancel();
+
+        startButton.setText("Start");
+        startButton.setTag(0);
+    }
+
+    private void startProgress() {
+        target = progressTextView.getSpannableTask();
+        // target.runTask(1.3f);
+        // target.runTask(5000);
+        target.runTask(Integer.parseInt(secEditText.getText().toString()) * 1000);
+
+        startButton.setText("Cancel");
+        startButton.setTag(1);
+    }
+}
 ```
 
 
